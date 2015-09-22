@@ -1,0 +1,12 @@
+#!/bin/bash -e
+COLOR_SET="#[fg=cyan bg=magenta bold]"
+COLOR_RESET="#[fg=$BYOBU_LIGHT bg=$BYOBU_DARK]"
+pushd ~ > /dev/null
+REMINDCOUNT=$(($(remind .reminders | grep . | wc -l)-1))
+if [ $REMINDCOUNT = 0 ]; then
+    exit 0
+fi
+echo "$COLOR_SET"R:"$REMINDCOUNT""$COLOR_RESET"
+popd > /dev/null
+exit 0
+
