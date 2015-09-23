@@ -6,7 +6,7 @@ REMINDCOUNT=$(($(remind .reminders | grep . | wc -l)-1))
 if [ $REMINDCOUNT = 0 ]; then
     exit 0
 fi
-echo "$COLOR_SET"R:"$REMINDCOUNT""$COLOR_RESET"
+echo "$COLOR_SET""$REMINDCOUNT"R"$COLOR_RESET"
 popd > /dev/null
 exit 0
 
